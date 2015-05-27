@@ -15,7 +15,7 @@
 //    Zoom - middle mouse, or mousewheel / touch: two finger spread or squish
 //    Pan - right mouse, or arrow keys / touch: three finter swipe
 
-THREE.OrbitControls = function(object, domElement, options) {
+THREE.OrbitControls = function(object, domElement) {
 
 	this.object = object;
 	this.domElement = domElement ? domElement : document;
@@ -59,14 +59,14 @@ THREE.OrbitControls = function(object, domElement, options) {
 
 	// How far you can orbit vertically, upper and lower limits.
 	// Range is 0 to Math.PI radians.
-	this.minPolarAngle = options.minPolar || 0; // radians
-	this.maxPolarAngle = options.maxPolar || Math.PI; // radians
+	this.minPolarAngle = 0; // radians
+	this.maxPolarAngle = Math.PI; // radians
 
 
 	// How far you can orbit horizontally, upper and lower limits.
 	// If set, must be a sub-interval of the interval [ - Math.PI, Math.PI ].
-	this.minAzimuthAngle = options.minAzimuth || -Infinity; // radians
-	this.maxAzimuthAngle = options.maxAzimuth || Infinity; // radians
+	this.minAzimuthAngle = -Infinity; // radians
+	this.maxAzimuthAngle = Infinity; // radians
 
 	// Set to true to disable use of the keys
 	this.noKeys = false;
